@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
-
+require('dotenv/config');
 const app = express();
 
-mongoose.connect('mongodb+srv://kalecio:lookupsc.@cluster0-1nb6y.mongodb.net/week10?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASE_CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
